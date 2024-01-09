@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.example.mytraveljournal.TravelMemory"/>
+        <variable
+            name="viewModel"
+            type="com.example.mytraveljournal.SharedViewModel" />
+    </data>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Place Name -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/textPlaceName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_memory_place_name"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"/>
+
+            <EditText
+                android:id="@+id/editPlaceName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textPlaceName"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                android:inputType="text"
+                android:text="@{viewModel.placeLocation != null ? viewModel.placeLocation : ``}"/>
+
+            <TextView
+                android:id="@+id/textPlaceLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_memory_place_location"
+                android:layout_below="@id/editPlaceName"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"/>
+
+            <EditText
+                android:id="@+id/editPlaceLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textPlaceLocation"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                android:inputType="text"
+                android:text="@{viewModel.placeLocation != null ? viewModel.placeLocation : ``}"/>
+
+            <!-- Date of Travel -->
+            <TextView
+                android:id="@+id/textDateOfTravel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_memory_date_of_travel"
+                android:layout_below="@id/editPlaceLocation"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"/>
+
+            <DatePicker
+                android:id="@+id/datePicker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textDateOfTravel"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                android:OnDateChangedListener="@{(view, year, monthOfYear, dayOfMonth) -> viewModel.onDateSelected(year, monthOfYear, dayOfMonth)}"/>
+
+            <!-- Travel Type (Dropdown Picker) -->
+            <TextView
+                android:id="@+id/textTravelType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_memory_travel_type"
+                android:layout_below="@id/datePicker"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"/>
+
+            <Spinner
+                android:id="@+id/spinnerTravelType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textTravelType"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                android:entries="@array/travel_types"
+                android:onItemSelected="@{(parent, view, position, id) -> viewModel.onTravelTypeSelected(parent.getItemAtPosition(position).toString())}"/>
+
+            <!-- Travel Mood (Slider) -->
+            <TextView
+                android:id="@+id/textTravelMood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_memory_travel_mood"
+                android:layout_below="@id/spinnerTravelType"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"/>
+
+            <SeekBar
+                android:id="@+id/seekBarTravelMood"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textTravelMood"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                android:max="100"
+                android:progress="@={viewModel.travelMood}"/>
+
+            <!-- Travel Notes -->
+            <TextView
+                android:id="@+id/textTravelNotes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_memory_travel_notes"
+                android:layout_below="@id/seekBarTravelMood"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"/>
+
+            <EditText
+                android:id="@+id/editTravelNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textTravelNotes"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                android:inputType="textMultiLine"
+                android:minLines="1"
+                android:text="@{viewModel.travelNotes != null ? viewModel.travelNotes : ``}"/>
+
+            <!-- Save Button -->
+            <Button
+                android:id="@+id/buttonEditMemory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_edit_memory"
+                android:layout_below="@id/editTravelNotes"
+                android:layout_marginTop="16dp"
+                android:layout_centerHorizontal="true"
+                android:enabled="true" />
+
+        </RelativeLayout>
+    </ScrollView>
+</layout>
+
+    <!--</androidx.constraintlayout.widget.ConstraintLayout>-->

@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">MiDiarioDeViaje</string>
+    <string name="navigation_drawer_open" >Abrir el menú de navegación</string>
+    <string name="navigation_drawer_close">Cerrar el menú de navegación</string>
+    <string name="nav_header_title">Stefania Silivestru</string>
+    <string name="nav_header_subtitle">stefania.silivestru04@gmail.com</string>
+    <string name="nav_header_desc">Encabezado de navegación</string>
+    <string name="action_settings">Configuración</string>
+
+    <string name="menu_home">Inicio</string>
+    <string name="menu_profile">Perfil</string>
+    <string name="menu_contactus">Contáctanos</string>
+    <string name="menu_share">Compartir</string>
+    <string name="menu_settings">Configuración</string>
+    <string name="menu_add_memory">Agregar Recuerdo</string>
+
+    <string name="settings_change_theme">Presiona el botón para cambiar el tema</string>
+    <string name="settings_change_language">Elige tu idioma</string>
+
+    <string name="profile_app_name">Mi diario de viaje</string>
+    <string name="profile_app_version">Versión 1.0</string>
+    <string name="profile_app_developer">Desarrollado por: Stefania Silivestru</string>
+    <string name="profile_app_copyright">Derechos de autor © 2024 AndroidAcademy</string>
+
+    <string name="contact_text">Aquí puedes escribirnos un mensaje para mejorar tu experiencia con nuestra aplicación.</string>
+    <string name="share_text">¡Comparte tu experiencia de viaje con tus amigos!</string>
+
+    <string name="btn_change_theme">Cambiar Tema</string>
+    <string name="text_add_memory">Presiona el botón para agregar un nuevo recuerdo</string>
+    <string name="favourite">Favorito</string>
+    <string name="add_to_favourite">Agregar a favoritos</string>
+    <string name="text_view_details">Ver Detalles</string>
+    <string name="text_edit_memory">Editar recuerdo</string>
+    <string name="edit_memory">Editar Recuerdo</string>
+    <string name="add_memory_place_name">Nombre del Lugar: </string>
+    <string name="add_memory_place_location">Ubicación del Lugar: </string>
+    <string name="add_memory_date_of_travel">Fecha del Viaje: </string>
+    <string name="add_memory_travel_type">Tipo de Viaje: </string>
+    <string name="add_memory_travel_mood">Estado de Ánimo del Viaje: </string>
+    <string name="add_memory_travel_notes">Notas de Viaje: </string>
+    <string name="add_memory_save_memory">Guardar Recuerdo</string>
+    <string name="text_button_share">Compartir</string>
+    <string name="add_memory_add_photos">Subir fotos</string>
+    <string name="contactus_button_compose_email">Escribir correo</string>
+
+</resources>

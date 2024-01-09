@@ -1,0 +1,137 @@
+<!-- res/layout/fragment_memory_details.xml -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="memory"
+            type="com.example.mytraveljournal.TravelMemory" />
+        <variable
+            name="viewModel"
+            type="com.example.mytraveljournal.SharedViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/labelPlaceName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_memory_place_name"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/detailsPlaceName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.placeName}"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@id/labelPlaceName"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/labelLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_memory_place_location"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detailsPlaceName" />
+
+        <TextView
+            android:id="@+id/detailsLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.placeLocation}"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@id/labelLocation"
+            app:layout_constraintTop_toTopOf="@id/labelLocation" />
+
+        <TextView
+            android:id="@+id/labelDateOfTravel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_memory_date_of_travel"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detailsLocation" />
+
+        <TextView
+            android:id="@+id/detailsDateOfTravel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@id/labelDateOfTravel"
+            app:layout_constraintTop_toTopOf="@id/labelDateOfTravel" />
+
+        <TextView
+            android:id="@+id/labelTravelType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_memory_travel_type"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detailsDateOfTravel" />
+
+        <TextView
+            android:id="@+id/detailsTravelType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.travelType}"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@id/labelTravelType"
+            app:layout_constraintTop_toTopOf="@id/labelTravelType" />
+
+        <TextView
+            android:id="@+id/labelTravelMood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_memory_travel_mood"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detailsTravelType" />
+
+        <TextView
+            android:id="@+id/detailsTravelMood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(viewModel.travelMood)}"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@id/labelTravelMood"
+            app:layout_constraintTop_toTopOf="@id/labelTravelMood" />
+
+        <TextView
+            android:id="@+id/labelTravelNotes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_memory_travel_notes"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detailsTravelMood" />
+
+        <TextView
+            android:id="@+id/detailsTravelNotes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.travelNotes}"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@id/labelTravelNotes"
+            app:layout_constraintTop_toTopOf="@id/labelTravelNotes" />
+
+        <!-- Add more labels and details TextViews as needed -->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

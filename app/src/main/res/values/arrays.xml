@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="travel_types">
+        <item>Leisure</item>
+        <item>Business</item>
+        <item>Family</item>
+    </string-array>
+
+    <string-array name="languages">
+        <item>en</item>
+        <item>es</item>
+    </string-array>
+</resources>
