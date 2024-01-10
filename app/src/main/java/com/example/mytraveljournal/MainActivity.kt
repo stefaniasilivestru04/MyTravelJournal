@@ -39,8 +39,6 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.appBarMain.toolbar)
 
         sharedViewModel = ViewModelProvider(this).get(SharedViewModel::class.java)
-        Log.d("ViewModel", "SharedViewModel created in MainActivity: $sharedViewModel")
-
 
         // Navigation Drawer
         val drawerLayout: DrawerLayout = binding.drawerLayout

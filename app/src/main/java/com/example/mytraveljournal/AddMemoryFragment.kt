@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -57,13 +58,14 @@ class AddMemoryFragment : Fragment() {
 
             sharedViewModel.onDateSelected(selectedYear, selectedMonth, selectedDay)
             sharedViewModel.addMemory()
+            Toast.makeText(context, "Memory saved", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_nav_add_memory_to_nav_home)
 
         }
 
         binding.buttonAddPhotos.setOnClickListener {
-            Log.d("button", "Add Photos button clicked")
             addPhotosFromGallery()
+            Toast.makeText(context, "Added photos", Toast.LENGTH_SHORT).show()
         }
 
         return root
